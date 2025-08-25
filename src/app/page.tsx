@@ -8,10 +8,23 @@ import c4 from '/public/c4.jpg'
 
 
 import { cn } from "@/lib/utils"
+import { CardCarousel } from "@/components/ui/card-carousel"
 
 const Page = () => {
+  const images=[ 
+    {src:"/c1.jpg",alt:"image1"},
+    {src:"/c3.jpg",alt:"image2"},
+    {src:"/c4.jpg",alt:"image2"}
+
+  ]
+
+  
   return (
-    <div className="bg-white min-h-screen flex items-center justify-center">
+    
+    <div className="bg-white min-h-screen flex items-center justify-center">\
+    <div>
+      <CardCarousel images={images}/>
+    </div>
       <SkiperCard
         title="Div-dev"
         description="Best in the town"
