@@ -7,7 +7,8 @@ import { Progress } from "@/components/ui/progress"
 import { User, Award, BarChart } from "lucide-react"
 
 export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState(0)
+  // ✅ only allow numbers, not null
+  const [activeTab, setActiveTab] = useState<number>(0)
 
   const tabs = [
     { title: "Profile", icon: User },
@@ -25,7 +26,10 @@ export default function Dashboard() {
       <ExpandedTabs
         tabs={tabs}
         activeColor="text-primary"
-        onChange={(index) => setActiveTab(index)}
+        // ✅ Guard against null
+        onChange={(index) => {
+          if (index !== null) setActiveTab(index)
+        }}
       />
 
       {/* 👉 Tab Content */}
@@ -33,8 +37,12 @@ export default function Dashboard() {
         {activeTab === 0 && (
           <SkiperCard className="p-6 bg-white">
             <h2 className="text-xl font-semibold mb-2">👤 Profile</h2>
-            <p className="text-gray-600">Username: <span className="font-medium">Divyansh</span></p>
-            <p className="text-gray-600">Level: <span className="font-medium">Explorer (Lv. 3)</span></p>
+            <p className="text-gray-600">
+              Username: <span className="font-medium">Divyansh</span>
+            </p>
+            <p className="text-gray-600">
+              Level: <span className="font-medium">Explorer (Lv. 3)</span>
+            </p>
           </SkiperCard>
         )}
 

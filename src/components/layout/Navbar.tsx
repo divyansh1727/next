@@ -45,9 +45,10 @@ export default function Navbar() {
           </Link>
         ))}
         {/* 🚀 Call-to-Action */}
-        <Button size="sm" className="bg-indigo-600 text-white rounded-xl shadow-md">
-          Start Quest 🚀
-        </Button>
+        <Button className="px-3 py-1 text-sm bg-indigo-600 text-white rounded-xl shadow-md">
+  Start Quest 🚀
+</Button>
+
         {/* 🌙 Theme Toggle */}
         <ModeToggle />
       </div>
@@ -77,7 +78,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button size="sm" className="bg-indigo-600 text-white rounded-xl shadow-md">
+          <Button  className="bg-indigo-600 text-white rounded-xl shadow-md">
             Start Quest 🚀
           </Button>
           {/* 🌙 Theme Toggle inside mobile menu */}
